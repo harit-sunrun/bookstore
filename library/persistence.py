@@ -8,6 +8,7 @@ engine = create_engine('sqlite:////Users/hhimanshu/Downloads/library.db',
 Session = scoped_session(sessionmaker(
                          bind=engine, autocommit=False, autoflush=False))
 
+
 class Book(Base):
     __tablename__ = 'book'
     id = Column('id', Integer, primary_key=True)
@@ -23,6 +24,7 @@ class Book(Base):
     def __repr__(self):
         return '<Book(%s, %s, %s, %s)>' % (self.id, self.title, self.author,
                                            self.keywords)
+
 
 def get_session():
     return Session()
