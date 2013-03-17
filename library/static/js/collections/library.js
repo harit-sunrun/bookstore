@@ -10,6 +10,7 @@ app.Library = Backbone.Collection.extend({
 
 	parse: function(response) {
 		// console.log('in parse: ' + response);
-		return response.objects;
+		//noinspection JSUnresolvedVariable
+    return response.objects;
 	}
 });

@@ -7,7 +7,7 @@ app.LibraryView = Backbone.View.extend({
 		'click #add': 'addBook'
 	},
 
-	initialize: function(initialBooks) {
+	initialize: function() {
 		// console.log('library view: initialize');
 		this.collection = new app.Library();
 		this.collection.fetch();
@@ -36,7 +36,7 @@ app.LibraryView = Backbone.View.extend({
 		e.preventDefault();
 
 		var formData = {};
-		$('#addBook div').children('input').each(function(i, el){
+		$('#addBook').find('div').children('input').each(function(i, el){
 			if ($(el).val() !== '') {
 				formData[el.id] = $(el).val();
 			}
